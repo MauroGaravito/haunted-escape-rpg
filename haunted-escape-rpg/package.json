@@ -1,0 +1,23 @@
+{
+  "name": "haunted-escape-rpg",
+  "version": "1.0.0",
+  "description": "An 8-bit role-playing game where players escape from a haunted house with three unique characters.",
+  "main": "src/main.ts",
+  "scripts": {
+    "start": "ts-node src/main.ts",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "ts-node": "^10.0.0",
+    "typescript": "^4.0.0"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "rpg",
+    "8-bit",
+    "game",
+    "haunted house"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
