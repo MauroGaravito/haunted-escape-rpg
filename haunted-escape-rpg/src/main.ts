@@ -1,6 +1,6 @@
-import { GameEngine } from './game/engine';
+import GameEngine from './game/engine';
 import { GameState } from './game/state';
-import { HauntedHouse } from './scenes/hauntedHouse';
+import HauntedHouse from './scenes/hauntedHouse';
 import { Max, Glitch, Dalia } from './characters';
 
 const main = () => {
@@ -12,3 +12,4 @@ const main = () => {
 };
 
 main();
+

@@ -2,11 +2,15 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var HauntedHouse = /** @class */ (function () {
     function HauntedHouse() {
-        this.description = "You find yourself in a dark, eerie house filled with strange noises and flickering lights.";
+        this.description =
+            'You find yourself in a dark, eerie house filled with strange noises and flickering lights.';
         this.events = [];
     }
     HauntedHouse.prototype.describeEnvironment = function () {
         console.log(this.description);
+    };
+    HauntedHouse.prototype.interact = function () {
+        this.describeEnvironment();
     };
     HauntedHouse.prototype.addEvent = function (event) {
         this.events.push(event);

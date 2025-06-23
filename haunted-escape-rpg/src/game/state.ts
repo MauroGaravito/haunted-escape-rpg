@@ -17,6 +17,10 @@ export class GameState {
         };
     }
 
+    update() {
+        // Placeholder for future state updates
+    }
+
     save() {
         localStorage.setItem('gameState', JSON.stringify(this));
     }

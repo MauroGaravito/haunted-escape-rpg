@@ -15,6 +15,9 @@ var GameState = /** @class */ (function () {
             Dalia: []
         };
     }
+    GameState.prototype.update = function () {
+        // Placeholder for future state updates
+    };
     GameState.prototype.save = function () {
         localStorage.setItem('gameState', JSON.stringify(this));
     };
