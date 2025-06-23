@@ -9,15 +9,17 @@ export interface Character {
 
 export interface Scene {
     description: string;
+    describeEnvironment(): void;
     interact(): void;
     events: string[];
 }
 
 export interface GameState {
-    playerPosition: string;
-    inventory: string[];
+    playerPositions: { [key: string]: { x: number; y: number } };
+    inventory: { [key: string]: any };
     currentScene: string;
     save(): void;
     load(): void;
     reset(): void;
 }
+
