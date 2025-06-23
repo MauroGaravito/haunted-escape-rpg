@@ -19,15 +19,19 @@ var GameState = /** @class */ (function () {
         // Placeholder for future state updates
     };
     GameState.prototype.save = function () {
-        localStorage.setItem('gameState', JSON.stringify(this));
+        if (typeof localStorage !== 'undefined') {
+            localStorage.setItem('gameState', JSON.stringify(this));
+        }
     };
     GameState.prototype.load = function () {
-        var savedState = localStorage.getItem('gameState');
-        if (savedState) {
-            var state = JSON.parse(savedState);
-            this.currentScene = state.currentScene;
-            this.playerPositions = state.playerPositions;
-            this.inventory = state.inventory;
+        if (typeof localStorage !== 'undefined') {
+            var savedState = localStorage.getItem('gameState');
+            if (savedState) {
+                var state = JSON.parse(savedState);
+                this.currentScene = state.currentScene;
+                this.playerPositions = state.playerPositions;
+                this.inventory = state.inventory;
+            }
         }
     };
     GameState.prototype.reset = function () {

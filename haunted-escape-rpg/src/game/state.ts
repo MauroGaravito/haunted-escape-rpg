@@ -22,16 +22,20 @@ export class GameState {
     }
 
     save() {
-        localStorage.setItem('gameState', JSON.stringify(this));
+        if (typeof localStorage !== 'undefined') {
+            localStorage.setItem('gameState', JSON.stringify(this));
+        }
     }
 
     load() {
-        const savedState = localStorage.getItem('gameState');
-        if (savedState) {
-            const state = JSON.parse(savedState);
-            this.currentScene = state.currentScene;
-            this.playerPositions = state.playerPositions;
-            this.inventory = state.inventory;
+        if (typeof localStorage !== 'undefined') {
+            const savedState = localStorage.getItem('gameState');
+            if (savedState) {
+                const state = JSON.parse(savedState);
+                this.currentScene = state.currentScene;
+                this.playerPositions = state.playerPositions;
+                this.inventory = state.inventory;
+            }
         }
     }
 
