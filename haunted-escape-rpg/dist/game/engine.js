@@ -1,11 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var GameEngine = /** @class */ (function () {
-    function GameEngine() {
-        this.gameState = new GameState();
+    function GameEngine(gameState) {
+        this.gameState = gameState;
         this.isRunning = false;
+        this.currentScene = null;
     }
-    GameEngine.prototype.start = function () {
+    GameEngine.prototype.start = function (initialScene) {
+        this.currentScene = initialScene;
         this.isRunning = true;
         this.gameLoop();
     };
@@ -13,12 +15,15 @@ var GameEngine = /** @class */ (function () {
         while (this.isRunning) {
             this.update();
             this.render();
-            // Add a delay or wait for user input here
+            // In a real game there would be timing logic here
+            break; // avoid infinite loop during development
         }
     };
     GameEngine.prototype.update = function () {
         // Update game state logic here
-        this.gameState.update();
+        if (typeof this.gameState.update === 'function') {
+            this.gameState.update();
+        }
     };
     GameEngine.prototype.render = function () {
         // Render the current scene here

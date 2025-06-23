@@ -1,6 +1,12 @@
-class HauntedHouse {
+import { Scene, Character } from '../types';
+
+class HauntedHouse implements Scene {
+    description: string;
+    events: string[];
+
     constructor() {
-        this.description = "You find yourself in a dark, eerie house filled with strange noises and flickering lights.";
+        this.description =
+            'You find yourself in a dark, eerie house filled with strange noises and flickering lights.';
         this.events = [];
     }
 
@@ -8,11 +14,15 @@ class HauntedHouse {
         console.log(this.description);
     }
 
-    addEvent(event) {
+    interact() {
+        this.describeEnvironment();
+    }
+
+    addEvent(event: string) {
         this.events.push(event);
     }
 
-    handleInteraction(character) {
+    handleInteraction(character: Character) {
         console.log(`${character.name} interacts with the haunted house.`);
         // Logic for interaction can be added here
     }
