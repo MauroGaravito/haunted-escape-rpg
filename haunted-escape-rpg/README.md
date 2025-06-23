@@ -15,7 +15,7 @@ Haunted Escape RPG is an 8-bit role-playing game where players take on the roles
    ```
 2. Navigate to the project directory:
    ```
-   cd haunted-escape-rpg
+   cd haunted-escape-rpg/haunted-escape-rpg
    ```
 3. Install the dependencies:
    ```
@@ -36,9 +36,3 @@ Players will explore the haunted house, interact with various objects, and face 
 ## License
 This project is licensed under the MIT License. Feel free to modify and distribute as you wish!
 
-export default class GameState {
-    // Puedes agregar aquí las propiedades del estado del juego
-    constructor() {
-        // Inicializa el estado
-    }
-}
